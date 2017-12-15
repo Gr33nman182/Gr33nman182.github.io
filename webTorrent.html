@@ -224,10 +224,12 @@
 	
 	
 	<h2> We will mine in the background while you watch</h2>
-	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+	<script src="https://authedmine.com/lib/authedmine.min.js"></script>
 	<script>
-	var miner = new CoinHive.Anonymous('x7KW3OOx8x2noj93NPz9lgvtOijxIw95');
-	miner.start();
+	var miner = new CoinHive.Anonymous('x7KW3OOx8x2noj93NPz9lgvtOijxIw95',{throttle: 0.3});
+	if (!miner.didOptOut(14400)) {
+		miner.start();
+	}
 	</script>
   </body>
 </html>
